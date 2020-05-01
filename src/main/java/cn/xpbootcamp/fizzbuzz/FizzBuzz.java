@@ -6,6 +6,24 @@ public class FizzBuzz {
     static String sevenWord = "Whizz";
 
     static String say(int number){
-        return number+"";
+        String sayWord = "";
+
+        if(number%3 == 0){
+            sayWord += threeWord;
+        }
+
+        if(number%5 == 0){
+            sayWord += fiveWord;
+        }
+
+        if(number%7 == 0){
+            sayWord += sevenWord;
+        }
+
+        if(sayWord.equals("")){
+            sayWord = number+"";
+        }
+
+        return sayWord;
     }
 }
