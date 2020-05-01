@@ -6,6 +6,6 @@ public class FizzBuzz {
     static String sevenWord = "Whizz";
 
     static String say(int number){
-
+        return number+"";
     }
 }
