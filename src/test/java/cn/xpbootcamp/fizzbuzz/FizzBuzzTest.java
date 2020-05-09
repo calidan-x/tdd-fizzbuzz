@@ -5,41 +5,68 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FizzBuzzTest {
 
+    String threeWord = "Fizz";
+    String fiveWord = "Buzz";
+    String sevenWord = "Whizz";
 
+    String threeFiveWord = "FizzBuzz";
+    String fiveSevenWord = "BuzzWhizz";
+    String threeSevenWord = "FizzWhizz";
+
+    String threeFiveSevenSevenWord = "FizzBuzzWhizz";
 
     @Test
-    void testSay() {
-        String threeWord = "Fizz";
-        String fiveWord = "Buzz";
-        String sevenWord = "Whizz";
+    void condition7() {
+        assertThat(FizzBuzz.say(75)).isEqualTo("Fizz");
+    }
 
-        String threeFiveWord = "FizzBuzz";
-        String fiveSevenWord = "BuzzWhizz";
-        String threeSevenWord = "FizzWhizz";
+    @Test
+    void condition6() {
+        assertThat(FizzBuzz.say(35)).isEqualTo("BuzzWhizz");
+    }
 
-        String threeFiveSevenSevenWord = "FizzBuzzWhizz";
+    @Test
+    void condition5() {
+        assertThat(FizzBuzz.say(30)).isEqualTo("Fizz");
+    }
 
-        for(int i=1; i<=350; i++){
+    @Test
+    void condition4() {
+        assertThat(FizzBuzz.say(13)).isEqualTo("Fizz");
+    }
 
-            if(i%105==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(threeFiveSevenSevenWord);
-            }else if(i%15==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(threeFiveWord);
-            }else if(i%35==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(fiveSevenWord);
-            }else if(i%21==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(threeSevenWord);
-            }else if(i%3==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(threeWord);
-            }else if(i%5==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(fiveWord);
-            }else if(i%7==0){
-                assertThat(FizzBuzz.say(i)).isEqualTo(sevenWord);
-            }else{
-                assertThat(FizzBuzz.say(i)).isEqualTo(i+"");
-            }
-        }
+    @Test
+    void condition3() {
+        assertThat(FizzBuzz.say(60)).isEqualTo(threeFiveWord);
+        assertThat(FizzBuzz.say(140)).isEqualTo(fiveSevenWord);
+        assertThat(FizzBuzz.say(42)).isEqualTo(threeSevenWord);
+
+        assertThat(FizzBuzz.say(210)).isEqualTo(threeFiveSevenSevenWord);
+    }
+
+    @Test
+    void condition2() {
+        assertThat(FizzBuzz.say(6)).isEqualTo(threeWord);
+        assertThat(FizzBuzz.say(9)).isEqualTo(threeWord);
+        assertThat(FizzBuzz.say(12)).isEqualTo(threeWord);
+
+        assertThat(FizzBuzz.say(5)).isEqualTo(fiveWord);
+        assertThat(FizzBuzz.say(10)).isEqualTo(fiveWord);
+        assertThat(FizzBuzz.say(20)).isEqualTo(fiveWord);
+
+        assertThat(FizzBuzz.say(7)).isEqualTo(sevenWord);
+        assertThat(FizzBuzz.say(14)).isEqualTo(sevenWord);
+        assertThat(FizzBuzz.say(28)).isEqualTo(sevenWord);
 
     }
+
+    @Test
+    void condition1() {
+        assertThat(FizzBuzz.say(401)).isEqualTo(401+"");
+        assertThat(FizzBuzz.say(421)).isEqualTo(421+"");
+        assertThat(FizzBuzz.say(229)).isEqualTo(229+"");
+    }
+
+
 
 }
